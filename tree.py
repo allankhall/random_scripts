@@ -41,7 +41,7 @@ class Stack:
         node = ListNode(data)
         if self.head == None:
             self.head = node
-	else:
+        else:
             node.next = self.head
             self.head = node
 
@@ -68,7 +68,7 @@ def printTreeIterative(node):
     stack.push(node)
     while stack.head != None:
         current = stack.pop()
-        print current.data
+        print(current.data)
         if current.left != None:
             stack.push(current.left)
         if current.right != None:
@@ -96,4 +96,3 @@ print("print tree recursive")
 printTreeRecursive(n1)
 print("print tree iterative")
 printTreeIterative(n1)
-
