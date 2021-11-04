@@ -23,7 +23,7 @@ mysql> select * from event_log limit 5;
 
 mysql> select * from event_log order by message, first_occurrence limit 5;   
 +------+---------------------+---------------------------------------------------------------------------------+----------+
-| id   | first_occurrence    | message                                                                      | reported |
+| id   | first_occurrence    | message                                                                         | reported |
 +------+---------------------+---------------------------------------------------------------------------------+----------+
 | 1958 | 2019-01-31 09:00:19 | monitoring alert 196.168.5.1  SOCKET9                                           |        1 |
 | 1960 | 2019-01-31 09:20:43 | monitoring alert 192.168.5.1  SOCKET9                                           |        1 |
