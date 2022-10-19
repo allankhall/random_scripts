@@ -12,6 +12,15 @@ sub main {
     push(@events, {id => 3, parent_id => 1});
     push(@events, {id => 4, parent_id => 1});
     push(@events, {id => 5, parent_id => 4});
+    
+    # events array in tree form
+    #
+    #       1      2
+    #      / \
+    #     3   4
+    #          \
+    #           5
+
     my @roots = returnRoots(\@events);
     print Dumper @roots;
 }
@@ -30,9 +39,3 @@ sub returnRoots {
 }
 
 
-#
-#   1      2
-#  / \
-# 3   4
-#      \
-#       5
