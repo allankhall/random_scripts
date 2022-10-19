@@ -14,7 +14,6 @@ sub main {
     push(@events, {id => 5, parent_id => 4});
     my @roots = returnRoots(\@events);
     print Dumper @roots;
-print Dumper returnLeafs(\@events);
 }
 
 
