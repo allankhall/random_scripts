@@ -28,3 +28,11 @@ sub returnRoots {
     }
     return @roots;
 }
+
+
+#
+#   1      2
+#  / \
+# 3   4
+#      \
+#       5
