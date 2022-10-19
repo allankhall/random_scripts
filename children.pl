@@ -18,6 +18,7 @@ sub main {
 
 
 sub returnRoots {
+    #a root is defined as an event whose parent_id is 0
     my $events = shift;
     my @roots = ();
     for my $event(@{$events}) {
