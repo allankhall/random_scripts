@@ -14,6 +14,7 @@ sub main {
     push(@rules,{vehicle_type => 'car', state_registration => 'OH', max_passenger_count => 4, allow => 1});
     push(@rules,{vehicle_type => 'truck', state_registration => 'ANY', max_passenger_count => 4, allow => 1});
     push(@rules,{vehicle_type => 'truck', state_registration => 'ANY', max_passenger_count => 4, allow => 1});
+    push(@rules,{vehicle_type => 'motorcycle', state_registration => 'CA', max_passenger_count => '1', allow => 1});
     push(@rules,{vehicle_type => 'ANY', state_registration => 'ANY', max_passenger_count => 'ANY', allow => 0});
 
     #create a vehicle
@@ -34,8 +35,8 @@ sub allow {
     for my $rule (@{$rules}) {
         if (
               ( $rule->{vehicle_type} eq 'ANY' || $rule->{vehicle_type} eq $vehicle->{vehicle_type}) &&
-              ( $rule->{state_registration} eq 'ANY' || $rule->{state_regisatration} eq $vehicle->{state_registration}) &&
-              ( $rule->{max_passenger_count} eq 'ANY' || $rule->{max_passenger_count} <= $vehicle->{assenger_count})
+              ( $rule->{state_registration} eq 'ANY' || $rule->{state_registration} eq $vehicle->{state_registration}) &&
+              ( $rule->{max_passenger_count} eq 'ANY' || $rule->{max_passenger_count} >= $vehicle->{passenger_count})
         ) {
           return $rule->{allow};
         }
